@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo Pokémon TCG</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <span class="badge">Coleção à venda</span>
+      <h1>Catálogo Pokémon TCG</h1>
+      <p>Cartas disponíveis com imagem, idioma, condição e preço. Atualizado diretamente pelo estoque mestre.</p>
+      <div class="hero__actions no-print">
+        <button id="printBtn">Gerar PDF</button>
+        <a id="whatsAll" class="button button--ghost" target="_blank" rel="noreferrer">Enviar lista no WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls no-print">
+      <div class="searchbox"><input id="search" placeholder="Buscar por nome, número, coleção..." /></div>
+      <select id="statusFilter"><option value="Disponível">Disponíveis</option><option value="Todos">Todos</option><option value="Reservado">Reservados</option><option value="Vendido">Vendidos</option></select>
+      <select id="languageFilter"><option value="Todos">Todos os idiomas</option></select>
+      <select id="conditionFilter"><option value="Todos">Todas as condições</option></select>
+      <select id="sortBy"><option value="nome">Ordenar por nome</option><option value="preco-asc">Menor preço</option><option value="preco-desc">Maior preço</option><option value="set">Coleção</option></select>
+    </section>
+
+    <section class="summary" id="summary"></section>
+    <section class="catalog" id="catalog"></section>
+    <section class="empty" id="empty" hidden>
+      <h2>Nenhuma carta encontrada</h2>
+      <p>Confira os filtros ou a aba ESTOQUE_MESTRE da sua planilha.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Catálogo gerado a partir do Google Sheets. As imagens oficiais são referências para identificação da carta. Confira sempre a foto real antes de comprar.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
